@@ -3,61 +3,76 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRANSPORTE LIRA</title>
+    <title>TRANSPORTE LIRA | Fretes e Mudanças Residenciais</title>
+    
+    <link rel="icon" type="image/png" href="assets/LOGO.PNG" />
+    
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5cd8/X08u/4rF8vK1Q6hT7d0Y/V+8g/J+D2P8FfE5p3p1C2F/E8Z/11b6Qz5hH3A==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
 </head>
 <body>
+<body>
+    <header class="main-header" id="main-header">
+        <a href="#home" class="logo" aria-label="Página Inicial - Transporte Lira">
+            <img src="assets/LOGO.PNG" alt="Transporte Lira Logo" />
+        </a>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#home" aria-label="Navegar para a página inicial">HOME</a></li>
+                <li><a href="#services" aria-label="Navegar para a seção de serviços">SERVIÇOS</a></li>
+                <li><a href="#fleet" aria-label="Navegar para a seção de frota">FROTA</a></li>
+                <li><a href="#about-us" aria-label="Navegar para a seção sobre a empresa">SOBRE NÓS</a></li>
+                <li><a href="#contact" aria-label="Navegar para a seção de contato">CONTATO</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
     <main>
         <section class="hero-section" id="home">
             <div class="background-circle"></div>
-            <header class="main-header">
-                <a href="#home" class="logo">
-                    <img src="assets/LOGO.PNG" alt="Transporte Lira Logo" />
-                </a>
-                <nav class="navigation">
-                    <ul>
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#services">SERVIÇOS</a></li>
-                        <li><a href="#fleet">FROTA</a></li>
-                        <li><a href="#about-us">SOBRE NÓS</a></li>
-                        <li><a href="#contact">CONTATO</a></li>
-                    </ul>
-                </nav>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
             <div class="hero-content">
                 <div class="text-content">
-                    <h2>TRANSPORTE <br /><span>LIRA</span></h2>
+                    <h1 class="main-title">TRANSPORTE <br /><span>LIRA</span></h1>
                     <p>
-                        Com mais de 10 anos no mercado, a TRANSPORTE LIRA já realizou mais
+                        Com mais de 10 anos no mercado, a **TRANSPORTE LIRA** já realizou mais
                         de 4.000 fretes e mudanças em todo território brasileiro, sempre
                         buscando comprometimento com a satisfação de nossos clientes.
                     </p>
                     <a href="https://api.whatsapp.com/send?phone=5521994947112&text=Ol%C3%A1,%20tudo%20bem?"
-                       target="_blank" class="btn primary">ENTRE EM CONTATO</a>
+                        target="_blank" class="btn primary whatsapp-btn" aria-label="Entrar em contato via WhatsApp">
+                        <i class="fab fa-whatsapp"></i> ENTREGUE SEUS SONHOS COM A GENTE
+                    </a>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/Volkswagen 15.180.png" 
-                         srcset="assets/Volkswagen 15.180_small.png 500w,
-                                 assets/Volkswagen 15.180.png 1000w"
-                         sizes="(max-width: 600px) 500px, 1000px"
-                         alt="Caminhão Volkswagen 15.180" 
-                         class="main-truck-img" />
+                    <img src="assets/Volkswagen 15.180 - Sem placa.png"
+                        srcset="assets/Volkswagen 15.180_small.png 500w,
+                                assets/Volkswagen 15.180.png 1000w"
+                        sizes="(max-width: 600px) 500px, 1000px"
+                        alt="Caminhão Volkswagen 15.180 - Destaque Principal"
+                        class="main-truck-img" />
                 </div>
             </div>
             <ul class="social-icons">
                 <li>
-                    <a href="https://api.whatsapp.com/send?phone=5521994947112&text=Ol%C3%A1,%20tudo%20bem?" target="_blank">
-                        <img src="assets/WhatsApp.png" alt="WhatsApp" />
-                    </a>
+                     <a href="https://api.whatsapp.com/send?phone=5521994947112&text=Ol%C3%A1,%20tudo%20bem?" 
+                     target="_blank"
+                     aria-label="Acesse nosso WhatsApp">
+                     <img src="assets/WhatsApp.png" alt="WhatsApp" class="social-icon-img" /> 
+                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/transportelira_/" target="_blank">
-                        <img src="assets/Insta.png" alt="Instagram" />
+                     <a href="https://www.instagram.com/transportelira_/" 
+                    target="_blank"
+                    aria-label="Acesse nosso Instagram">
+                    <img src="assets/Insta.png" alt="Instagram" class="social-icon-img" />
                     </a>
                 </li>
             </ul>
@@ -65,7 +80,7 @@
 
         <section class="page-section" id="services">
             <div class="section-container">
-                <h2 class="section-title">Nossos Serviços</h2>
+                <h2 class="section-title">Nossos <span>Serviços</span></h2>
 
                 <div class="service-block">
                     <h3>Embalagem Qualificada</h3>
@@ -79,6 +94,7 @@
                         desembalagem de todo material.
                     </p>
                     <p>Aqui estão alguns dos ganhos de uma embalagem qualificada em um serviço realizado pela Transporte Lira:</p>
+                    
                     <div class="packaging-benefits-grid">
                         <div class="benefit-card">
                             <h4 class="card-title">Proteção dos itens</h4>
@@ -111,13 +127,13 @@
                         </div>
                     </div>
                     <div class="packaging-images">
-                        <img src="assets/Embalagem02.jpeg" alt="Embalagem de Proteção" />
-                        <img src="assets/Embalagem01.jpeg" alt="Embalagem Qualificada" />
+                        <img src="assets/Embalagem02.jpeg" alt="Exemplo de Embalagem de Proteção" loading="lazy" />
+                        <img src="assets/Embalagem01.jpeg" alt="Exemplo de Embalagem Qualificada e profissional" loading="lazy" />
                     </div>
                 </div>
 
                 <div class="service-block">
-                    <h3>Serviços Realizados</h3>
+                    <h3>Serviços Realizados (Carrossel)</h3>
                     <p>
                         Nossos serviços são projetados para atender às necessidades de
                         cada cliente, que precisam mover suas mercadorias, pertences e até
@@ -128,37 +144,25 @@
                     <div class="carousel-wrapper">
                         <div class="carousel-container">
                             <div class="carousel-slides">
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços01.PNG" alt="Serviço 1" />
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços02.PNG" alt="Serviço 2" />
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços03.PNG" alt="Serviço 3" />
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços04.PNG" alt="Serviço 4" />
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços05.PNG" alt="Serviço 5" />
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/Serviços06.PNG" alt="Serviço 6" />
-                                </div>
+                                <div class="carousel-slide"><img src="assets/Serviços01.PNG" alt="Serviço de Frete 1" /></div>
+                                <div class="carousel-slide"><img src="assets/Serviços02.PNG" alt="Serviço de Frete 2" /></div>
+                                <div class="carousel-slide"><img src="assets/Serviços03.PNG" alt="Serviço de Frete 3" /></div>
+                                <div class="carousel-slide"><img src="assets/Serviços04.PNG" alt="Serviço de Frete 4" /></div>
+                                <div class="carousel-slide"><img src="assets/Serviços05.PNG" alt="Serviço de Frete 5" /></div>
+                                <div class="carousel-slide"><img src="assets/Serviços06.PNG" alt="Serviço de Frete 6" /></div>
                             </div>
                             <div class="carousel-controls">
-                                <span class="prev-slide">&#10094;</span>
-                                <span class="next-slide">&#10095;</span>
+                                <span class="prev-slide" role="button" aria-label="Slide anterior">&#10094;</span>
+                                <span class="next-slide" role="button" aria-label="Próximo slide">&#10095;</span>
                             </div>
                         </div>
-                        <div class="carousel-bullets">
-                            <span class="bullet active" data-slide="0"></span>
-                            <span class="bullet" data-slide="1"></span>
-                            <span class="bullet" data-slide="2"></span>
-                            <span class="bullet" data-slide="3"></span>
-                            <span class="bullet" data-slide="4"></span>
-                            <span class="bullet" data-slide="5"></span>
+                        <div class="carousel-bullets" role="tablist">
+                            <span class="bullet active" data-slide="0" role="tab" aria-selected="true" aria-controls="slide-0"></span>
+                            <span class="bullet" data-slide="1" role="tab" aria-selected="false" aria-controls="slide-1"></span>
+                            <span class="bullet" data-slide="2" role="tab" aria-selected="false" aria-controls="slide-2"></span>
+                            <span class="bullet" data-slide="3" role="tab" aria-selected="false" aria-controls="slide-3"></span>
+                            <span class="bullet" data-slide="4" role="tab" aria-selected="false" aria-controls="slide-4"></span>
+                            <span class="bullet" data-slide="5" role="tab" aria-selected="false" aria-controls="slide-5"></span>
                         </div>
                     </div>
                 </div>
@@ -167,9 +171,9 @@
 
         <section class="page-section" id="fleet">
             <div class="section-container">
-                <h2 class="section-title">Nossa Frota</h2>
+                <h2 class="section-title">Nossa <span>Frota</span></h2>
                 <div class="vehicle-card">
-                    <img src="assets/Sprinter.png" alt="Mercedes Benz - Sprinter" />
+                    <img src="assets/Sprinter - sem placa.png" alt="Caminhão Mercedes Benz - Sprinter" loading="lazy" />
                     <h3>Sprinter - Mercedes Benz</h3>
                     <p>
                         <b>Espaço de Carga Ampla:</b> A Sprinter é conhecida por sua
@@ -199,7 +203,7 @@
                     </p>
                 </div>
                 <div class="vehicle-card">
-                    <img src="assets/Volkswagen 15.180.png" alt="Volkswagen - 15.180" />
+                    <img src="assets/Volkswagen 15.180 - Sem placa.png" alt="Caminhão Volkswagen - 15.180" loading="lazy" />
                     <h3>Volkswagen 15.180</h3>
                     <p>
                         <b>Capacidade de Carga Média a Pesada:</b> O Volkswagen 15.180 é
@@ -207,13 +211,13 @@
                         transportar uma quantidade substancial de carga, tornando-o
                         adequado para uma variedade de necessidades de transporte.
                     </p>
-                </div>
+                    </div>
             </div>
         </section>
 
         <section class="page-section" id="about-us">
             <div class="section-container">
-                <h2 class="section-title">Sobre Nós</h2>
+                <h2 class="section-title"><span>Sobre</span> Nós</h2>
                 <p class="intro-text">
                     A Transporte Lira é uma empresa de mudanças localizada no Rio de
                     Janeiro, atuando no mercado desde 2008. Ela oferece uma variedade de
@@ -291,7 +295,7 @@
                         diretamente com a empresa para obter informações detalhadas sobre
                         seus serviços, preços e disponibilidade.
                     </p>
-                    <img class="featured-image" src="assets/Sprint - Teresópilis.jpeg" alt="Sprint em Teresópolis" />
+                    <img class="featured-image" src="assets/Sprint - Teresópilis.jpeg" alt="Sprint da Frota em Teresópolis" loading="lazy" />
                 </div>
             </div>
         </section>
@@ -305,7 +309,9 @@
                 <p class="contact-text">Segue nosso contato, estamos disponível via WhatsApp</p>
                 <p class="whatsapp-number">
                     <strong><a href="https://api.whatsapp.com/send?phone=5521994947112&text=Ol%C3%A1,%20tudo%20bem?"
-                               target="_blank">(21) 99494-7112</a></strong>
+                                target="_blank" aria-label="Ligar para (21) 99494-7112">
+                                (21) 99494-7112
+                            </a></strong>
                 </p>
                 <h3 class="instagram-text">Siga a Transporte Lira em nosso Instagram</h3>
                 <p class="instagram-handle"><strong>@TransporteLira_</strong></p>
@@ -320,5 +326,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
