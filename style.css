@@ -235,7 +235,7 @@ p {
 .hero-content .text-content {
     max-width: 60rem;
     margin-right: 2rem;
-    /* Texto padrão é escuro para o fundo claro */
+    /* COR PADRÃO: Azul Escuro (Funciona bem com fundo BG-LIGHT) */
     color: var(--primary-color); 
 }
 
@@ -245,7 +245,7 @@ p {
     margin-bottom: 1rem;
     line-height: 1.2em;
     font-weight: 800;
-    color: var(--primary-color); /* Texto padrão é escuro */
+    color: var(--primary-color); /* COR PADRÃO: Azul Escuro */
     text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
 }
 
@@ -257,7 +257,7 @@ p {
 }
 
 .hero-content .text-content p {
-    color: var(--primary-color); /* Texto padrão é escuro */
+    color: var(--primary-color); /* COR PADRÃO: Azul Escuro */
     font-size: 1.8rem;
     line-height: 1.8;
 }
@@ -651,7 +651,7 @@ p {
         font-size: 7rem;
     }
     
-    /* CORREÇÃO APLICADA: Em telas maiores que 768px, usa o azul escuro padrão para contraste com o fundo claro */
+    /* [AJUSTE FINAL AQUI] Garante que o texto use o Azul Escuro (Primary) para contraste com o BG-LIGHT */
     .hero-content .text-content, 
     .hero-content .text-content h1, 
     .hero-content .text-content p {
@@ -757,15 +757,16 @@ p {
         padding: 10rem 2rem 6rem;
     }
 
-    /* CORREÇÃO APLICADA: Em 768px (celular), força o texto para branco, pois o círculo azul cobre mais área */
+    /* [AJUSTE FINAL AQUI] No mobile (768px), o texto também usará o Azul Escuro (Primary), 
+       já que o fundo é predominantemente claro. */
     .hero-content .text-content,
     .hero-content .text-content h1,
     .hero-content .text-content p {
-        color: var(--text-color-light); 
+        color: var(--primary-color); 
     }
 
     .main-title {
-        color: var(--text-color-light);
+        color: var(--primary-color);
     }
     
     .main-title span {
