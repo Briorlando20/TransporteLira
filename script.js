@@ -1,35 +1,38 @@
 // js/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Menu Hambúrguer (Responsividade) ---
     const hamburger = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.navigation'); // AQUI: Seleciona a navegação inteira
-    const header = document.querySelector('.main-header');
+    const navLinks = document.querySelector('.navigation');
+    const mainHeader = document.querySelector('.main-header');
 
-    if (hamburger && navLinks && header) {
-        hamburger.addEventListener('click', () => {
+    // 1. Menu Hambúrguer (Responsividade)
+    if (hamburger && navLinks && mainHeader) {
+        const toggleMenu = () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
-            // header.classList.toggle('menu-open'); // Removido, pois não é necessário com o novo CSS
-        });
+            // Impede a rolagem do corpo quando o menu está aberto em mobile
+            document.body.classList.toggle('no-scroll', navLinks.classList.contains('active'));
+        };
 
-        // Fechar menu ao clicar em um link (apenas para mobile)
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Fechar menu ao clicar em um link (para mobile)
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
+                // Verifica se a largura da tela é menor que 768px (ou o breakpoint do menu)
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    toggleMenu(); // Reusa a função para fechar
                 }
             });
         });
     }
 
-    // --- Carrossel de Serviços ---
+    // 2. Carrossel de Serviços (O código foi mantido, pois estava funcional)
     const carouselWrapper = document.querySelector(".carousel-wrapper");
 
     if (carouselWrapper) {
-        const carouselContainer = carouselWrapper.querySelector(".carousel-container");
         const slides = carouselWrapper.querySelectorAll(".carousel-slide");
+        const carouselSlides = carouselWrapper.querySelector(".carousel-slides");
         const bullets = carouselWrapper.querySelectorAll(".bullet");
         const prevButton = carouselWrapper.querySelector(".prev-slide");
         const nextButton = carouselWrapper.querySelector(".next-slide");
@@ -46,19 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = index;
 
             const offset = -currentIndex * 100;
-            carouselContainer.querySelector(".carousel-slides").style.transform = `translateX(${offset}%)`;
+            carouselSlides.style.transform = `translateX(${offset}%)`;
 
             bullets.forEach((bullet, i) => {
                 bullet.classList.toggle("active", i === currentIndex);
+                bullet.setAttribute('aria-selected', i === currentIndex);
             });
         }
 
         function nextSlide() {
             showSlide(currentIndex + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentIndex - 1);
         }
 
         bullets.forEach((bullet, index) => {
@@ -78,6 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             resetAutoSlide();
         });
 
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
         function startAutoSlide() {
             autoSlideInterval = setInterval(nextSlide, 3000);
         }
@@ -90,12 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentIndex);
         startAutoSlide();
 
+        // Pausa no hover
         carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
         carouselWrapper.addEventListener('mouseleave', startAutoSlide);
     }
 
 
-    // --- Scroll Suave para links de navegação ---
+    // 3. Scroll Suave para links de navegação OTIMIZADO
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -104,8 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                const headerHeight = document.querySelector('.main-header').offsetHeight;
-                const offsetTop = targetElement.offsetTop - headerHeight;
+                const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
+                let offsetTop = targetElement.offsetTop;
+
+                // Se o target for a seção Hero (#home), rola para o topo (0)
+                if (targetId === "#home") {
+                    offsetTop = 0;
+                } else {
+                    // Subtrai a altura do cabeçalho fixo
+                    offsetTop = targetElement.offsetTop - headerHeight;
+                }
 
                 window.scrollTo({
                     top: offsetTop,
